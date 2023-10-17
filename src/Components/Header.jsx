@@ -5,14 +5,34 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
-      <HStack p={"3"} shadow={"base"} bgColor={"blackAlpha.900"}>
-        <Button variant={"unstyled"} color={"white"}>
+      <HStack
+        p={"3"}
+        shadow={"base"}
+        bgColor={"blackAlpha.900"}
+        justifyContent={"space-evenly"}
+      >
+        <Button
+          w={"70px"}
+          variant={"unstyled"}
+          color={"white"}
+          backgroundColor={"whiteAlpha.300"}
+        >
           <Link to="/">Home</Link>
         </Button>
-        <Button variant={"unstyled"} color={"white"}>
+        <Button
+          w={"70px"}
+          variant={"unstyled"}
+          color={"white"}
+          backgroundColor={"whiteAlpha.300"}
+        >
           <Link to="/coins">Coins</Link>
         </Button>
-        <Button variant={"unstyled"} color={"white"}>
+        <Button
+          w={"98px"}
+          variant={"unstyled"}
+          color={"white"}
+          backgroundColor={"whiteAlpha.300"}
+        >
           <Link to="/exchanges">Exchanges</Link>
         </Button>
       </HStack>
