@@ -38,7 +38,7 @@ const Home = () => {
         fontFamily={"Bebas Neue"}
         letterSpacing={"widest"}
       >
-        WELCOME!
+        WELCOME TO COINHUB!
       </Text>
     </Box>
   );

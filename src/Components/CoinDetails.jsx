@@ -42,6 +42,7 @@ const CoinDetails = () => {
     const fetchCoin = async () => {
       const { data } = await axios.get(`${server}/coins/${id}`);
 
+      // so as to make the chart re-render when ever the currenct of days is changed.
       const { data: chartData } = await axios.get(
         `${server}/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`
       );
@@ -107,6 +108,7 @@ const CoinDetails = () => {
       ) : (
         <>
           <Box width={"full"} borderWidth={1} marginTop={"10"}>
+            {/* rendering the chart component by passing all the required values */}
             <Chart arr={chartArray} currency={currencySymbol} days={days} />
           </Box>
           <HStack p={"4"} wrap={"wrap"} marginTop={"5"} overflowX={"auto"}>

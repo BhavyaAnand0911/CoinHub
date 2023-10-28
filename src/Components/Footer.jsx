@@ -18,13 +18,13 @@ const Footer = () => {
             letterSpacing={"widest"}
             textAlign={["center", "left"]}
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et maxime
-            perspiciatis similique quibusdam architecto esse.
+            Our founder is Mr. Bhavya Anand who is a very proficient front end
+            developer. XD
           </Text>
         </VStack>
         <VStack>
           <Avatar boxSize={"28"} mt={["4", "0"]}></Avatar>
-          <Text>Our Founder</Text>
+          <Text>Bhavya Anand</Text>
         </VStack>
       </Stack>
     </Box>

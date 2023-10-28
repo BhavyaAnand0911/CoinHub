@@ -22,26 +22,30 @@ const Coins = () => {
   const [currency, setCurrency] = useState("inr");
 
   const currencySymbol =
-    currency === "inr" ? "₹" : currency === "eur" ? "€" : "$";
+    currency === "inr" ? "₹" : currency === "eur" ? "€" : "$"; // use if else instead of this for better readability
   useEffect(() => {
     const fetchCoins = async () => {
       const { data } = await axios.get(
         `${server}/coins/markets?vs_currency=${currency}&page=${page}`
       );
       setCoins(data);
+      // here loading is set to false because as soon as the data will be fetched the loader has to dissapear
       setLoading(false);
-      console.log(data);
+      //console.log(data);
     };
     fetchCoins();
   }, [currency, page]);
+
   const changePage = (page) => {
     setPage(page);
     setLoading(true);
   };
 
-  const btns = new Array(132).fill(1);
+  const btns = new Array(132).fill(1); // creating an array and filling all with 1
+
   return (
     <Container maxW={"container.xl"}>
+      {/* if loading is true loader will be renderd else the content */}
       {loading ? (
         <Loader />
       ) : (
@@ -108,7 +112,7 @@ const CoinCard = ({ id, name, image, symbol, price, currencySymbol = "₹" }) =>
         }}
       >
         <Image src={image} w={"10"} h={"10"} objectFit={"contain"}></Image>
-        <Heading size={"md"} noOfLines={1}>
+        <Heading size={"md"} noOfLines={2}>
           {symbol}
         </Heading>
         <Text noOfLines={1}>{name}</Text>
